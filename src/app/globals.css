@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #171321;
+  --green: #219921;
+  --dkblue: #0d314b;
+  --plum: #4b0d49;
+  --hotmag: #ff17e4;
+  --magenta: #e310cb;
+  --aqua: #86fbfb;
+  --white: #f7f8fa;
+  --font-size: 1.3rem;
+}
+
+@font-face {
+  font-family: 'Source Code Pro', monospace;
+  src: url('/SourceCodePro-VariableFont_wght.ttf');
+  font-style: normal;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: var(--font-size);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+/* Ensure the body stretches to fill the viewport */
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%; /* Make #app take up the full viewport height */
+}
+
+.box-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.title-div {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.25;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.25;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.description {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.profile-photo {
+  display: flex;
+  justify-content: center;
+  margin: 3%;
+}
+
+.linkedin-box,
+.github-box,
+.portfolio-box {
+  display: flex;
+  padding: 10vw;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkedin-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: #0072b1;
+}
+
+.linkedin-box:hover::after {
+  content: 'LinkedIn';
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin-top: 22vw;
+}
+.linkedin-box:hover {
+  opacity: 0.6;
+}
+
+.github-box {
+  background-image: url('https://github.githubassets.com/images/modules/dashboard/universe23/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.github-box:hover {
+  opacity: 0.6;
+}
+
+.portfolio-box:hover {
+  opacity: 0.6;
+}
+
+.portfolio-box {
+  background-color: var(--green);
+  overflow: hidden; /* add this line */
+}
+
+.portfolio-box:hover::after {
+  content: 'Portfolio';
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  margin-top: 22vw;
+  right: calc(33.33%);
+}
