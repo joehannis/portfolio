@@ -62,6 +62,18 @@ body,
   height: 100%; /* Make #app take up the full viewport height */
 }
 
+.about-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 70%;
+  font-family: 'Source Code Pro', monospace;
+  overflow: hidden;
+}
+
 .box-container {
   display: flex;
   justify-content: space-between;
@@ -90,6 +102,14 @@ body,
   display: block;
   justify-content: center;
   align-items: center;
+}
+.title-name {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.25;
+  display: block;
+  justify-content: center;
+  align-items: center;
   font-family: 'Source Code Pro', monospace;
 }
 
@@ -104,6 +124,7 @@ body,
   display: flex;
   justify-content: center;
   margin: 3%;
+  border-radius: 10px;
 }
 
 .linkedin-box,
@@ -131,17 +152,13 @@ body,
   content: 'LinkedIn';
   font-size: 1.5rem;
   font-weight: 600;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   justify-content: center;
   color: white;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  top: 50%;
-  left: 50%;
   position: absolute;
-  margin-top: 22vw;
+  margin-top: 8.5vw;
 }
 .linkedin-box:hover {
   opacity: 0.6;

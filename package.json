@@ -11,7 +11,8 @@
   "dependencies": {
     "next": "^13.5.3",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "typeit-react": "^2.6.4"
   },
   "devDependencies": {
     "autoprefixer": "latest",
