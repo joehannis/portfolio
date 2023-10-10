@@ -32,6 +32,27 @@ export default function Home() {
     <>
       <div>
         <div className='title-div'>
+          <div className='box-container'>
+            <a href='https://github.com/joehannis' className='github-box'>
+              <Image
+                src='/github-icon-white.png'
+                alt='GitHub icon'
+                width={150}
+                height={150}
+              />
+            </a>
+            <a
+              href='https://www.linkedin.com/in/joe-hannis/'
+              className='linkedin-box'
+            >
+              <Image
+                src='/linkedin-logo-white.png'
+                alt='LinkedIn icon'
+                width={80}
+                height={80}
+              />
+            </a>
+          </div>
           <TypeIt
             options={{
               speed: 5,
@@ -93,39 +114,6 @@ export default function Home() {
             </div>
           )}
         </div>
-      </div>
-
-      <div className='box-container'>
-        <a href='https://github.com/joehannis' className='github-box'>
-          <Image
-            src='/github-icon-white.png'
-            alt='GitHub icon'
-            width={80}
-            height={80}
-          />
-        </a>
-        <a
-          href='https://www.linkedin.com/in/joe-hannis/'
-          className='linkedin-box'
-        >
-          <Image
-            src='/linkedin-logo-white.png'
-            alt='LinkedIn icon'
-            width={80}
-            height={80}
-          />
-        </a>
-        <a
-          href='https://joehannis.github.io/portfolio/'
-          className='portfolio-box'
-        >
-          <Image
-            width={101}
-            height={101}
-            src='/pngkit_portfolio-png_1112902.png'
-            alt='Portfolio icon'
-          />
-        </a>
       </div>
     </>
   );
