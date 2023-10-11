@@ -4,8 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import TypeIt from 'typeit-react';
 import profilePic from '../../public/IMG_0022-removebg-preview.png';
-import linkedInIcon from '../../public/linkedin-logo-white.png';
-import githubIcon from '../../public/github-icon-white.png';
 
 export default function Home() {
   const [titleVisible, setTitleVisible] = useState(false);
@@ -33,32 +31,29 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      <div>
-        <div className='header'>
-          <div className='box-container'>
-            <Link className='navbar-link' href='/'>
-              Home
-            </Link>
-            <Link className='navbar-link' href='/about'>
-              About
-            </Link>
-            <Link className='navbar-link' href='/projects'>
-              Projects
-            </Link>
-
-            <a href='https://github.com/joehannis' className='github-box'>
-              <Image className='icon' src={githubIcon} alt='GitHub icon' />
-            </a>
-            <a
-              href='https://www.linkedin.com/in/joe-hannis/'
-              className='linkedin-box'
-            >
-              <Image className='icon' src={linkedInIcon} alt='LinkedIn icon' />
-            </a>
-          </div>
+    <div>
+      <div className='title-div'>
+        <TypeIt
+          options={{
+            speed: 5,
+            lifeLike: true,
+            waitUntilVisible: true,
+            cursor: false,
+          }}
+        >
+          <h3 className='title-name'>Hello, my name is</h3>
+        </TypeIt>
+        {titleVisible && <h1 className='title'>Joe Hannis</h1>}
+      </div>
+      <div className='photo-div'>
+        <div className='profile-photo'>
+          {profileVisible && (
+            <Image src={profilePic} alt='Picture of the author' priority />
+          )}
         </div>
-        <div className='title-div'>
+      </div>
+      <div className='description'>
+        {descriptionVisible && (
           <TypeIt
             options={{
               speed: 5,
@@ -67,54 +62,34 @@ export default function Home() {
               cursor: false,
             }}
           >
-            <h3 className='title-name'>Hello, my name is</h3>
+            <h2>Software Engineer</h2>
           </TypeIt>
-          {titleVisible && <h1 className='title'>Joe Hannis</h1>}
-        </div>
-        <div className='photo-div'>
-          <div className='profile-photo'>
-            {profileVisible && (
-              <Image src={profilePic} alt='Picture of the author' priority />
-            )}
-          </div>
-        </div>
-        <div className='description'>
-          {descriptionVisible && (
+        )}
+      </div>
+
+      <div className='about-me'>
+        {aboutMeVisible && (
+          <div className='typing-text'>
             <TypeIt
               options={{
-                speed: 5,
+                startDelay: 1500,
+                speed: 10,
                 lifeLike: true,
+                cursor: true,
                 waitUntilVisible: true,
-                cursor: false,
               }}
             >
-              <h2>Software Engineer</h2>
-            </TypeIt>
-          )}
-        </div>
-
-        <div className='about-me'>
-          {aboutMeVisible && (
-            <div className='typing-text'>
-              <TypeIt
-                options={{
-                  startDelay: 1500,
-                  speed: 10,
-                  lifeLike: true,
-                  cursor: true,
-                  waitUntilVisible: true,
-                }}
-              >
+              <p>
                 I love to use my brain and figure out puzzles. I find a
                 collaborative team environment exciting, where everyone is
                 coalescing around a problem and sharing knowledge. I love
                 learning, and I want a career that is constantly evolving and
                 challenging me, as I gain fulfillment from growth.
-              </TypeIt>
-            </div>
-          )}
-        </div>
+              </p>
+            </TypeIt>
+          </div>
+        )}
       </div>
-    </>
+    </div>
   );
 }
