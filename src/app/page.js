@@ -1,7 +1,11 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import TypeIt from 'typeit-react';
+import profilePic from '../../public/IMG_0022-removebg-preview.png';
+import linkedInIcon from '../../public/linkedin-logo-white.png';
+import githubIcon from '../../public/github-icon-white.png';
 
 export default function Home() {
   const [titleVisible, setTitleVisible] = useState(false);
@@ -31,28 +35,30 @@ export default function Home() {
   return (
     <>
       <div>
-        <div className='title-div'>
+        <div className='header'>
           <div className='box-container'>
+            <Link className='navbar-link' href='/'>
+              Home
+            </Link>
+            <Link className='navbar-link' href='/about'>
+              About
+            </Link>
+            <Link className='navbar-link' href='/projects'>
+              Projects
+            </Link>
+
             <a href='https://github.com/joehannis' className='github-box'>
-              <Image
-                src='/github-icon-white.png'
-                alt='GitHub icon'
-                width={150}
-                height={150}
-              />
+              <Image className='icon' src={githubIcon} alt='GitHub icon' />
             </a>
             <a
               href='https://www.linkedin.com/in/joe-hannis/'
               className='linkedin-box'
             >
-              <Image
-                src='/linkedin-logo-white.png'
-                alt='LinkedIn icon'
-                width={80}
-                height={80}
-              />
+              <Image className='icon' src={linkedInIcon} alt='LinkedIn icon' />
             </a>
           </div>
+        </div>
+        <div className='title-div'>
           <TypeIt
             options={{
               speed: 5,
@@ -63,20 +69,14 @@ export default function Home() {
           >
             <h3 className='title-name'>Hello, my name is</h3>
           </TypeIt>
-        </div>
-        <div className='title-div'>
           {titleVisible && <h1 className='title'>Joe Hannis</h1>}
         </div>
-        <div className='profile-photo'>
-          {profileVisible && (
-            <Image
-              src='/IMG_0022-removebg-preview.png'
-              alt='Picture of the author'
-              width={200}
-              height={300}
-              priority
-            />
-          )}
+        <div className='photo-div'>
+          <div className='profile-photo'>
+            {profileVisible && (
+              <Image src={profilePic} alt='Picture of the author' priority />
+            )}
+          </div>
         </div>
         <div className='description'>
           {descriptionVisible && (
@@ -99,7 +99,7 @@ export default function Home() {
               <TypeIt
                 options={{
                   startDelay: 1500,
-                  speed: 5,
+                  speed: 10,
                   lifeLike: true,
                   cursor: true,
                   waitUntilVisible: true,
