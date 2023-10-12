@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import TypeIt from 'typeit-react';
-import profilePic from '../../public/IMG_0022-removebg-preview.png';
+import profilePic from '../../public/profile.png';
 
 export default function Home() {
   const [titleVisible, setTitleVisible] = useState(false);
@@ -41,17 +41,23 @@ export default function Home() {
             cursor: false,
           }}
         >
-          <h3 className='title-name'>Hello, my name is</h3>
+          <h3 className='my-name-is'>Hello, my name is</h3>
         </TypeIt>
         {titleVisible && <h1 className='title'>Joe Hannis</h1>}
       </div>
-      <div className='photo-div'>
+      {/* <div className='photo-div'>
         <div className='profile-photo'>
           {profileVisible && (
-            <Image src={profilePic} alt='Picture of the author' priority />
+            <Image
+              src={profilePic}
+              width={350}
+              height={350}
+              alt='Picture of the author'
+              priority
+            />
           )}
         </div>
-      </div>
+      </div> */}
       <div className='description'>
         {descriptionVisible && (
           <TypeIt
@@ -66,28 +72,31 @@ export default function Home() {
           </TypeIt>
         )}
       </div>
-
-      <div className='about-me'>
-        {aboutMeVisible && (
-          <div className='typing-text'>
-            <TypeIt
-              options={{
-                startDelay: 1500,
-                speed: 10,
-                lifeLike: true,
-                cursor: true,
-                waitUntilVisible: true,
-              }}
-            >
-              <p>
-                I love to use my brain and figure out puzzles. I find a
-                collaborative team environment exciting, where everyone is
-                coalescing around a problem and sharing knowledge. I love
-                learning, and I want a career that is constantly evolving and
-                challenging me, as I gain fulfillment from growth.
-              </p>
-            </TypeIt>
-          </div>
+      <div className='languages'>
+        {descriptionVisible && (
+          <TypeIt
+            options={{
+              speed: 5,
+              strings: [
+                'React',
+                'Javascript',
+                'Node.js',
+                'Next.js',
+                'HTML',
+                'CSS',
+                'PostgreSQL',
+                'MongoDB',
+                'Docker',
+                'Github Actions',
+                'CI/CD Pipelines',
+              ],
+              loop: true,
+              breakLines: false,
+              lifeLike: true,
+              nextStringDelay: 3000,
+              waitUntilVisible: true,
+            }}
+          ></TypeIt>
         )}
       </div>
     </div>

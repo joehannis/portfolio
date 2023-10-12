@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --black: #171321;
   --green: #219921;
@@ -33,9 +29,15 @@ html {
 body {
   padding: 0;
   margin: 0;
-  background-color: var(--black);
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../../public/background.png');
+  background-size: 100%; /* Updated value */
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--white);
   font-size: var(--font-size);
+  overflow: hidden;
 }
 
 h1,
@@ -86,6 +88,7 @@ body,
   flex-direction: row;
   justify-content: flex-end;
   height: auto;
+  color: var(--white);
   border-radius: 5px;
   margin: 0.2em;
   top: 1rem;
@@ -116,7 +119,7 @@ body,
   flex-direction: column;
   justify-content: center; /* Add this line to center the contents vertically */
   align-items: center; /* Add this line to center the contents horizontally */
-  margin-top: 3em;
+  margin-top: 4em;
   margin-bottom: 1rem;
   width: 100%;
   margin-left: 0; /* Add this line to make the div start from the left */
@@ -126,14 +129,16 @@ body,
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.25;
+  margin-top: 1%;
   display: block;
   justify-content: center;
   align-items: center;
 }
-.title-name {
+.my-name-is {
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.25;
+  margin-top: 2%;
   display: block;
   justify-content: center;
   align-items: center;
@@ -145,7 +150,22 @@ body,
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.25;
+  margin-top: 23vw;
   text-align: center;
+  overflow: hidden;
+}
+
+.languages {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Source Code Pro', monospace;
+  color: #34b11b;
+  word-wrap: break-word; /* Add this line to prevent the text from overflowing */
 }
 
 .profile-photo {
@@ -154,7 +174,7 @@ body,
   align-items: center;
   margin: 1%;
   border-radius: 10px;
-  width: 15%;
+  width: 1%;
 }
 
 .photo-div {
